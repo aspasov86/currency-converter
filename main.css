@@ -1,0 +1,159 @@
+.calc {
+    width: 400px;
+    margin: 50px auto;
+    padding: 25px;
+    border: 1px solid black;
+    position: relative;
+    display: grid;
+    box-sizing: content-box;
+    grid-template-areas: 
+        'input from switch'
+        'result to switch'
+        'calculate calculate calculate';
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr 46px;
+    background-image: url(currency.jpg);
+    background-position: center;
+}
+
+.fromWrapp, .toWrapp {
+    position: relative;
+}
+
+.fromWrapp {
+    grid-area: from;
+}
+
+.toWrapp {
+    grid-area: to;
+}
+
+#switch {
+    grid-area: switch;
+}
+
+#enterFrom {
+    grid-area: input;
+}
+
+#result {
+    grid-area: result;
+}
+
+#calculate {
+    grid-area: calculate;
+    height: 46px;
+}
+
+#enterFrom, #result {
+    height: 60px;
+    width: 100%;
+}
+
+#currencyFrom, #currencyTo {
+    font-size: 18px;
+    width: 100% !important;
+}
+
+select#currencyTo option[value="0"],
+select#currencyFrom option[value="0"], {
+    background-image: url(eur.svg);
+}
+
+#enterFrom, #result {
+    font-size: 25px;
+    padding-top: 26px;
+}
+
+#result:disabled {
+    color: #951717;
+}
+
+#currencyFrom:focus, 
+#currencyTo:focus,
+#enterFrom:focus {
+    box-shadow: none;
+    outline: 0;
+    border-color: rgba(17,17,17,.8);
+}
+
+#lbl-cur-from, #lbl-cur-to {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 18px;
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+    z-index: 1;
+}
+
+#switch, #calculate {
+    font-family: 'Roboto', sans-serif;
+    background: rgba(17,17,17,.8);
+    color: #fff;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    box-shadow: none;
+    transition: all .125s ease-in-out 0s;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+#switch:hover, 
+#calculate:hover {
+    background: #111111;
+}
+
+#switch:focus, 
+#calculate:focus {
+    outline: 0;
+}
+
+#switch > img {
+    width: 30px;
+    height: 30px;
+}
+
+.flag {
+    width: 32px;
+    height: 24px;
+}
+
+div.dd-select {
+    width: 100% !important;
+}
+
+a.dd-selected {
+    height: 60px;
+}
+
+ul.dd-options {
+    width: 160px !important;
+    left: 1px;
+    height: 250px;
+    overflow-y: scroll;
+}
+
+label.dd-option-text,
+label.dd-selected-text {
+    line-height: 32px !important;
+}
+
+
+img.dd-option-image, 
+img.dd-selected-image {
+    width: 32px;
+}
+
+img.dd-selected-image,
+label.dd-selected-text {
+    margin-top: 12px;
+}
+
+img.dd-selected-image,
+img.dd-option-image {
+    margin-left: 8px;
+}
